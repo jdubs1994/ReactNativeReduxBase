@@ -8,4 +8,14 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    marginTop: 20,
+    paddingVertical: 10,
+    alignItems: "center",
+    borderColor: '#d3d3d3',
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 200
+  },
+  
 });

@@ -8,6 +8,9 @@ const StackNavigator = createStackNavigator(
   {
     Login: {
       screen: Login,
+      navigationOptions: {
+          header: null
+      }
     },
     Signup: {
       screen: Signup
