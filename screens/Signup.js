@@ -3,11 +3,11 @@ import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../styles';
 
-class Home extends Component {
+class Signup extends Component {
     render() {
         return (
      <View style={styles.container}>
-         <Text>Farts {this.props.fart}</Text>
+         <Text>Signup {this.props.fart}</Text>
     </View>
         )
     }
@@ -20,4 +20,4 @@ const mapStateToProps = (state) => {
 
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(Signup)
