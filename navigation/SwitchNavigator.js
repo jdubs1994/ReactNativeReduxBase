@@ -4,8 +4,6 @@ import { Platform } from "react-native";
 import { createSwitchNavigator, createAppContainer } from "react-navigation";
 import TabNavigator from './TabNavigator';
 import AuthNavigator from './AuthNavigator';
-import Login from "../screens/Login";
-import Signup from "../screens/Signup";
 
 
 const SwitchNavigator = createSwitchNavigator(
