@@ -6,6 +6,11 @@ import { connect } from "react-redux";
 import { updateEmail, updatePassword } from "../actions/user";
 
 class Login extends Component {
+
+    login = () => {
+        this.props.navigation.navigate("Home")
+    }
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center" }}>
@@ -31,10 +36,17 @@ class Login extends Component {
             placeholder="Password"
           />
           <Button
+            title="Login"
+            type='outline'
+            containerStyle={{marginRight: '20%', marginLeft: '20%'}}
+            buttonStyle={{borderColor: 'black'}}
+            titleStyle={{color: 'black'}}
+            onPress={() => this.login()}
+          />
+          <Button
             title="Signup"
             type='outline'
             containerStyle={{marginRight: '20%', marginLeft: '20%'}}
-            // style={{}}
             buttonStyle={{borderColor: 'black'}}
             titleStyle={{color: 'black'}}
             onPress={() => this.props.navigation.navigate("Signup")}

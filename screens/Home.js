@@ -15,7 +15,7 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        fart: state
+        counter: state.counter
     }
 
 }
