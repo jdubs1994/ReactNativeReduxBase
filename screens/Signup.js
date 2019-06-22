@@ -6,10 +6,6 @@ import { connect } from "react-redux";
 import { updateEmail, updatePassword, updateUsername, updateBio, signup } from "../actions/user";
 
 class Signup extends Component {
-  signup = () => {
-    this.props.signup()
-    this.props.navigation.navigate('HOME')
-  };
 
   render() {
     return (
@@ -55,7 +51,7 @@ class Signup extends Component {
             containerStyle={{ marginRight: "20%", marginLeft: "20%" }}
             buttonStyle={{ borderColor: "black" }}
             titleStyle={{ color: "black" }}
-            onPress={() => this.signup()}
+            onPress={() => this.props.signup(this.props)}
           />
         </View>
       </View>
