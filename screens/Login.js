@@ -1,20 +1,15 @@
 import React, { Component } from "react";
 import { Text, View, TextInput } from "react-native";
 import { Button, Input } from "react-native-elements";
-import firebase from 'firebase'
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { updateEmail, updatePassword, login } from "../actions/user";
+import { updateEmail, updatePassword } from "../actions/user";
 
 class Login extends Component {
 
-  componentDidMount() {
-      firebase.auth().onAuthStateChanged((user) => {
-        if(user) {
-          this.props.navigation.navigate('Home')
-        }
-      })
-  }
+    login = () => {
+        this.props.navigation.navigate("Home")
+    }
 
   render() {
     return (
@@ -46,7 +41,7 @@ class Login extends Component {
             containerStyle={{marginRight: '20%', marginLeft: '20%'}}
             buttonStyle={{borderColor: 'black'}}
             titleStyle={{color: 'black'}}
-            onPress={() => this.props.login(this.props)}
+            onPress={() => this.login()}
           />
           <Button
             title="Signup"
@@ -63,7 +58,7 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ updateEmail, updatePassword, login }, dispatch);
+  return bindActionCreators({ updateEmail, updatePassword }, dispatch);
 };
 
 const mapStateToProps = state => {

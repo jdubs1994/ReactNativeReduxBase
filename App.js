@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import Home from './screens/Home';
 import reducer from './reducers/index';
-import firebase from './config/firebase';
+import TabNavigator from './navigation/TabNavigator';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';

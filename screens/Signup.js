@@ -3,12 +3,11 @@ import { Text, View, TextInput } from "react-native";
 import { Button, Input } from "react-native-elements";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { updateEmail, updatePassword, updateUsername, updateBio, signup } from "../actions/user";
+import { updateEmail, updatePassword, updateUsername, updateBio } from "../actions/user";
 
 class Signup extends Component {
-  signup = () => {
-    this.props.signup()
-    this.props.navigation.navigate('HOME')
+  login = () => {
+    this.props.navigation.navigate("Home");
   };
 
   render() {
@@ -55,7 +54,7 @@ class Signup extends Component {
             containerStyle={{ marginRight: "20%", marginLeft: "20%" }}
             buttonStyle={{ borderColor: "black" }}
             titleStyle={{ color: "black" }}
-            onPress={() => this.signup()}
+            onPress={() => this.login()}
           />
         </View>
       </View>
@@ -64,7 +63,7 @@ class Signup extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ updateEmail, updatePassword, updateUsername, updateBio, signup }, dispatch);
+  return bindActionCreators({ updateEmail, updatePassword, updateUsername, updateBio }, dispatch);
 };
 
 const mapStateToProps = state => {
