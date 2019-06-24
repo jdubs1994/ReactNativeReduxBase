@@ -4,14 +4,18 @@ import { Button, Input } from "react-native-elements";
 import firebase from 'firebase'
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { updateEmail, updatePassword, login } from "../actions/user";
+import { updateEmail, updatePassword, login, getUser } from "../actions/user";
 
 class Login extends Component {
 
   componentDidMount() {
       firebase.auth().onAuthStateChanged((user) => {
         if(user) {
-          this.props.navigation.navigate('Home')
+          this.props.getUser(user.uid)
+          if(this.props.user) {
+            console.log('Made it here')
+            this.props.navigation.navigate('Home')
+          }
         }
       })
   }
@@ -63,7 +67,7 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ updateEmail, updatePassword, login }, dispatch);
+  return bindActionCreators({ updateEmail, updatePassword, login, getUser }, dispatch);
 };
 
 const mapStateToProps = state => {
